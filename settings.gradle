@@ -1,4 +1,4 @@
-include ':app:homeworkthree2'
+include ':app:homeworkthree'
 include ':app:homeworktwo'
 include ':app:mytest'
 include ':app:homeworkone'
