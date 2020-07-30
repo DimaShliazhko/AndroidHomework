@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="20dp">
+
+
+    <TextView
+        android:id="@+id/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
+
+        android:text="@string/android"
+        android:textSize="30sp"
+        android:textStyle="bold"></TextView>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+        android:id="@+id/layout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/android">
+
+        <ImageView
+            android:id="@+id/mainview"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="20dp"
+            android:src="@drawable/ic_baseline_directions_bike_24"></ImageView>
+
+        <TextView
+            android:id="@+id/number_posts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_toRightOf="@+id/mainview"
+            android:text="125"></TextView>
+
+        <TextView
+            android:id="@+id/posts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_toLeftOf="@id/number_followers"
+
+            android:gravity="center"
+            android:paddingTop="40dp"
+            android:text="@string/posts"></TextView>
+
+
+        <TextView
+            android:id="@+id/number_followers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_toLeftOf="@id/number_following"
+            android:layout_toRightOf="@id/number_posts"
+            android:gravity="center"
+            android:text="20K"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_centerInParent="true"
+            android:layout_toLeftOf="@id/number_following"
+            android:layout_toRightOf="@id/number_posts"
+            android:gravity="center"
+            android:paddingTop="40dp"
+            android:text="@string/followers"></TextView>
+
+
+        <TextView
+            android:id="@+id/number_following"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginHorizontal="40dp"
+            android:gravity="center"
+            android:text="22"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_toRightOf="@id/number_followers"
+            android:gravity="center"
+            android:paddingTop="40dp"
+            android:text="@string/following"></TextView>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout1"
+        android:layout_marginVertical="10dp"
+        android:text="@string/username"
+        android:textSize="18dp"
+        android:textStyle="bold"></TextView>
+
+    <TextView
+        android:id="@+id/address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/username"
+        android:text="@string/address"
+        android:textStyle="bold"></TextView>
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/address"
+        android:text="@string/description"
+        android:textStyle="bold"></TextView>
+
+    <RelativeLayout
+        android:id="@+id/layout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/description"
+        android:gravity="center"
+
+        >
+
+        <ImageView
+            android:id="@+id/image1.1"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:padding="10dp"
+
+            android:src="@drawable/ic_baseline_directions_bike_24"></ImageView>
+
+
+        <ImageView
+            android:id="@+id/image1.2"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_toRightOf="@+id/image1.1"
+            android:padding="10dp"
+            android:src="@drawable/ic_baseline_directions_bike_24">
+
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/image1.3"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_toRightOf="@+id/image1.2"
+            android:padding="10dp"
+
+            android:src="@drawable/ic_baseline_directions_bike_24">
+
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/image1.4"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_toRightOf="@+id/image1.3"
+            android:padding="10dp"
+
+            android:src="@drawable/ic_baseline_directions_bike_24">
+
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/image1.5"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_toRightOf="@+id/image1.4"
+            android:padding="10dp"
+
+            android:src="@drawable/ic_baseline_directions_bike_24">
+
+        </ImageView>
+
+
+        <ImageView
+            android:id="@+id/image1.6"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_toRightOf="@+id/image1.5"
+            android:padding="10dp"
+
+            android:src="@drawable/ic_baseline_directions_bike_24">
+
+        </ImageView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/image1"
+        android:layout_below="@+id/layout2">
+
+        <ImageView
+            android:id="@+id/image3.1"
+            android:layout_width="75dp"
+            android:layout_height="60dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_baseline_directions_24"></ImageView>
+
+        <TextView
+            android:id="@+id/text2.1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/image3.1"
+            android:layout_alignLeft="@id/image3.1"
+            android:layout_alignRight="@id/image3.1"
+            android:gravity="center"
+            android:text="@string/description"></TextView>
+
+
+        <ImageView
+            android:id="@+id/image3.2"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="40dp"
+            android:layout_toRightOf="@+id/image3.1"
+            android:src="@drawable/ic_baseline_phone_callback_24"></ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/image3.2"
+            android:layout_alignLeft="@id/image3.2"
+            android:layout_alignRight="@id/image3.2"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="@string/call"></TextView>
+
+
+        <ImageView
+
+            android:id="@+id/image3.3"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="40dp"
+            android:layout_toLeftOf="@id/image3.4"
+
+            android:src="@drawable/ic_baseline_star_24"></ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/image3.3"
+            android:layout_alignLeft="@id/image3.3"
+            android:layout_alignRight="@id/image3.3"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="@string/save"></TextView>
+
+        <ImageView
+
+            android:id="@id/image3.4"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+
+            android:src="@drawable/ic_baseline_web_24"></ImageView>
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/image3.4"
+            android:layout_alignLeft="@id/image3.4"
+            android:layout_alignRight="@id/image3.4"
+            android:gravity="center"
+            android:text="@string/website"></TextView>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/image1"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/image2"
+
+        android:src="@drawable/ic_baseline_directions_bike_24"></ImageView>
+
+    <ImageView
+        android:id="@+id/image2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:src="@drawable/ic_baseline_local_dining_24"></ImageView>
+
+    <ImageView
+        android:id="@+id/image3"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/image2"
+        android:src="@drawable/ic_baseline_folder_24"></ImageView>
+
+
+</RelativeLayout>

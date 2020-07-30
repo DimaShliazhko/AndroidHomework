@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/firstlayout"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:background="@color/gray"
+        app:layout_constraintTop_toTopOf="@+id/main">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PHOTO"
+            android:textSize="40sp"
+            app:layout_constraintBottom_toBottomOf="@+id/firstlayout"
+            app:layout_constraintLeft_toLeftOf="@+id/firstlayout"
+            app:layout_constraintRight_toRightOf="@+id/firstlayout"
+            app:layout_constraintTop_toTopOf="@+id/firstlayout">
+
+        </TextView>
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="15dp"
+            android:src="@drawable/ic_baseline_photo_camera_24"
+            app:layout_constraintBottom_toBottomOf="@+id/firstlayout"
+            app:layout_constraintRight_toRightOf="@+id/firstlayout">
+
+        </ImageView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/secondlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/firstlayout"
+        tools:layout_editor_absoluteX="16dp">
+
+        <EditText
+            android:id="@+id/Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:hint="Title"
+            app:layout_constraintTop_toTopOf="@+id/secondlayout">
+
+        </EditText>
+
+        <EditText
+            android:id="@+id/Prise"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:hint="Prise"
+
+            app:layout_constraintTop_toBottomOf="@+id/Title">
+
+        </EditText>
+
+        <EditText
+            android:id="@+id/Location"
+            app:layout_constraintLeft_toRightOf="@+id/Prise"
+            app:layout_constraintRight_toRightOf="@+id/Title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="10dp"
+            android:hint="Location"
+
+
+
+            app:layout_constraintTop_toBottomOf="@+id/Title"></EditText>
+
+        <EditText
+            android:id="@+id/Description"
+            app:layout_constraintTop_toBottomOf="@+id/Prise"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="25dp"
+            android:hint="Description">
+        </EditText>
+
+        <EditText
+            android:id="@+id/Inventory"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/Description"
+            android:layout_marginTop="25dp"
+            android:hint="Inventory">
+
+        </EditText>
+        <EditText
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/Description"
+            app:layout_constraintRight_toRightOf="@+id/Description"
+            android:layout_marginTop="25dp"
+            android:hint="Weight">
+
+        </EditText>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

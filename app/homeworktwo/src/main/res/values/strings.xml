@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Homeworktwo</string>
+    <string name="sign_in">Sign in</string>
+    <string name="mail">Email</string>
+    <string name="password">Password</string>
+    <string name="remember">Remember</string>
+    <string name="forgot">Forgot password?</string>
+    <string name="just_sign">* Just sign in?</string>
+    <string name="android">Android</string>
+
+    <string name="posts">Posts</string>
+    <string name="followers">Followers</string>
+    <string name="following">Following</string>
+    <string name="username">Username</string>
+    <string name="address">address</string>
+    <string name="description">Description</string>
+    <string name="direction">Direction</string>
+    <string name="call">Call</string>
+    <string name="save">Save</string>
+    <string name="website">Website</string>
+    <string name="photo">Photo</string>
+    <string name="certificated">Certificated</string>
+    <string name="layouts">Layouts</string>
+    <string name="views">Views</string>
+
+
+</resources>

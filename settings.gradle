@@ -1,0 +1,5 @@
+include ':app:homeworktwo'
+include ':app:mytest'
+include ':app:homeworkone'
+include ':app'
+rootProject.name = "AndroidHomework"
