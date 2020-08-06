@@ -17,10 +17,10 @@
             </intent-filter>
 
         </activity>
-        <activity android:name=".AddContactActivity">
+        <activity android:name=".AddContactActivity" />
+        <activity android:name=".Edit_or_delete_activity" />
 
 
-        </activity>
     </application>
 
 </manifest>
