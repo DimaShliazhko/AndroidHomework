@@ -3,18 +3,24 @@ package com.dshliazhko.android.homeworkthree;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.io.Serializable;
 import java.util.Objects;
+import java.util.UUID;
 
-public class Contact {
-
+public class Contact implements Serializable {
+    private String id ;
     private String edit_name;
     private String edit_contact;
 
     public Contact(String edit_name, String edit_contact) {
         this.edit_name = edit_name;
         this.edit_contact = edit_contact;
+    //    this.id = UUID.randomUUID().toString();
     }
 
+    public String getId() {
+        return id;
+    }
 
     public String getEdit_name() {
         return edit_name;

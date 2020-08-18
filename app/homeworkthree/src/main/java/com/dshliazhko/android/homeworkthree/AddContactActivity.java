@@ -17,10 +17,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AddContactActivity extends AppCompatActivity {
+public class AddContactActivity extends AppCompatActivity implements Serializable {
 
     private ImageButton save;
     private EditText editNameContact;
@@ -31,11 +32,6 @@ public class AddContactActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-/*
-        editNameContact = findViewById(R.id.edit_name);
-        editContact = findViewById(R.id.edit_contact);
-        Log.d("dima","create ADD");
-*/
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_contact);
@@ -49,12 +45,7 @@ public class AddContactActivity extends AppCompatActivity {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-            /*     setEditContact_();
-                 setEditNameContact_();
-                Contact contact = new Contact(editNameContact_,editNameContact_);
-                mainActivity.setContact(contact);
 
-             */
                 editNameContact = findViewById(R.id.edit_name);
                 editContact = findViewById(R.id.edit_contact);
 
@@ -70,17 +61,7 @@ public class AddContactActivity extends AppCompatActivity {
 
 
     }
-/*
-    private void startActivityMain() {
-       // Intent intent = getIntent();
-        Intent intent = new Intent(this.getApplicationContext(), MainActivity.class);
-        Log.d("dima"," intent"+editNameContact.getText().toString());
-        intent.putExtra("name", editNameContact.getText().toString());
-        intent.putExtra("contact", editContact.getText().toString());
 
-
-        startActivity(intent);
-*/
     }
 
 

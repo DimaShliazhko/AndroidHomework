@@ -15,6 +15,7 @@ import android.widget.Adapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,21 +25,16 @@ public class MainActivity extends AppCompatActivity {
     private Button buttonAddContact;
     private TextView searchText;
     private RecyclerView recyclerView;
-  //  private ListAdapter adapter;
+    //  private ListAdapter adapter;
     private EditText editNameContact;
     private EditText editContact;
-
+    public static final String ContactID = "ContactID";
 
     private EditText editNameContact1;
     private EditText editContact1;
-    private final RecyclerView.Adapter adapter = new ListAdapter(this, new ListAdapter.OnContactClickListener() {
-        @Override
-        public void onContactClick(Contact contact) {
+    private ListAdapter.OnContactClickListener onContactClickListener;
+    private RecyclerView.Adapter adapter;
 
-                Intent intent = new Intent(this,Edit_or_delete_activity.class);
-                startActivity(intent);
-        }
-    });
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,8 +46,17 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
 
+        recyclerView.setAdapter(new ListAdapter(this, new ListAdapter.OnContactClickListener() {
+            @Override
+            public void onContactClick(Contact contact) {
+              //    Toast.makeText(MainActivity.this, "user " + contact.getEdit_name(), Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(MainActivity.this, Edit_or_delete_activity.class);
+                intent.putExtra("contact", contact);
 
-        recyclerView.setAdapter(adapter);
+
+                startActivityForResult(intent, 1000);
+            }
+        }));
 
 
         findViewById(R.id.add_contact_button).setOnClickListener(new View.OnClickListener() {
@@ -61,11 +66,9 @@ public class MainActivity extends AppCompatActivity {
                 startAddContactActivity();
 
 
-
-
-
             }
         });
+
 
     }
 
