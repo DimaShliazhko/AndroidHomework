@@ -7,7 +7,6 @@
         android:id="@+id/firstlayout"
         android:layout_width="match_parent"
         android:layout_height="240dp"
-
         android:background="@color/gray">
 
         <TextView
@@ -15,10 +14,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="PHOTO"
-
-            android:textSize="40sp">
-
-        </TextView>
+            android:textSize="40sp"></TextView>
 
         <ImageView
             android:layout_width="40dp"
@@ -26,30 +22,20 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
             android:layout_margin="15dp"
-            android:src="@drawable/ic_baseline_photo_camera_24">
-
-
-        </ImageView>
-
-
+            android:src="@drawable/ic_baseline_photo_camera_24"></ImageView>
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
         android:layout_below="@+id/firstlayout">
 
         <EditText
             android:id="@+id/Title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:layout_marginVertical="20dp"
-
-            android:hint="Title">
-
-        </EditText>
+            android:hint="Title"></EditText>
 
         <EditText
             android:id="@+id/Prise"
@@ -58,9 +44,7 @@
             android:layout_below="@id/Title"
             android:layout_alignLeft="@id/Title"
             android:layout_marginVertical="20dp"
-            android:hint="Prise">
-
-        </EditText>
+            android:hint="Prise"></EditText>
 
         <EditText
             android:id="@+id/Location"
@@ -77,9 +61,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/Prise"
             android:layout_marginVertical="20dp"
-            android:hint="Description">
-
-        </EditText>
+            android:hint="Description"></EditText>
 
         <EditText
             android:id="@+id/Inventory"
@@ -88,22 +70,14 @@
             android:layout_below="@+id/Description"
             android:layout_alignLeft="@+id/Description"
             android:layout_marginVertical="20dp"
-            android:hint="Inventory">
-
-        </EditText>
+            android:hint="Inventory"></EditText>
 
         <EditText
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/Description"
             android:layout_alignRight="@+id/Description"
-
             android:layout_marginVertical="20dp"
-            android:hint="Weight">
-
-        </EditText>
-
+            android:hint="Weight"></EditText>
     </RelativeLayout>
-
-
 </RelativeLayout>

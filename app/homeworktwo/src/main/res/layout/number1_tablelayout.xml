@@ -3,52 +3,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TableRow
-
-        android:layout_weight="0.1">
-
+    <TableRow android:layout_weight="0.1">
 
         <ImageView
-
             android:layout_width="50dp"
             android:layout_height="50dp"
-
-
-            android:src="@drawable/ic_baseline_folder_24">
-
-        </ImageView>
+            android:src="@drawable/ic_baseline_folder_24"></ImageView>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
             android:foregroundGravity="center"
-            android:text="Attractions">
-
-        </TextView>
+            android:text="Attractions"></TextView>
     </TableRow>
 
-    <TableRow
-
-        android:layout_weight="0.1">
-
+    <TableRow android:layout_weight="0.1">
 
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/ic_baseline_local_dining_24"
-
-            ></ImageView>
-
+            android:src="@drawable/ic_baseline_local_dining_24"></ImageView>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
             android:foregroundGravity="center"
-            android:text="Dinning">
-
-        </TextView>
+            android:text="Dinning"></TextView>
     </TableRow>
 
     <TableRow android:layout_weight="0.1">>
@@ -56,19 +38,14 @@
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/ic_baseline_school_24"
-
-            ></ImageView>
+            android:src="@drawable/ic_baseline_school_24"></ImageView>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
             android:foregroundGravity="center"
-            android:text="Education">
-
-        </TextView>
-
+            android:text="Education"></TextView>
     </TableRow>
 
     <TableRow android:layout_weight="0.1">
@@ -76,18 +53,14 @@
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/ic_baseline_people_24"
-
-            ></ImageView>
+            android:src="@drawable/ic_baseline_people_24"></ImageView>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
             android:foregroundGravity="center"
-            android:text="Family">
-
-        </TextView>
+            android:text="Family"></TextView>
     </TableRow>
 
     <TableRow android:layout_weight="0.1">
@@ -95,9 +68,7 @@
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/ic_baseline_favorite_24"
-
-            ></ImageView>
+            android:src="@drawable/ic_baseline_favorite_24"></ImageView>
 
 
         <TextView
@@ -110,13 +81,10 @@
 
     <TableRow android:layout_weight="0.1">
 
-
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/ic_baseline_home_24"
-
-            ></ImageView>
+            android:src="@drawable/ic_baseline_home_24"></ImageView>
 
         <TextView
             android:layout_width="wrap_content"
@@ -148,9 +116,7 @@
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/ic_baseline_radio_24"
-
-            ></ImageView>
+            android:src="@drawable/ic_baseline_radio_24"></ImageView>
 
         <TextView
             android:layout_width="wrap_content"
@@ -158,7 +124,6 @@
             android:layout_margin="10dp"
             android:foregroundGravity="center"
             android:text="Radio"></TextView>
-
     </TableRow>
 
     <TableRow android:layout_weight="0.1">
@@ -183,9 +148,7 @@
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/ic_baseline_directions_bike_24"
-
-            ></ImageView>
+            android:src="@drawable/ic_baseline_directions_bike_24"></ImageView>
 
         <TextView
             android:layout_width="wrap_content"

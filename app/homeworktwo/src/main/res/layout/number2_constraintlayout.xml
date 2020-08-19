@@ -8,7 +8,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/firstlayout"
         android:layout_width="match_parent"
         android:layout_height="240dp"
@@ -61,53 +61,41 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
             android:hint="Prise"
-
-            app:layout_constraintTop_toBottomOf="@+id/Title">
-
-        </EditText>
+            app:layout_constraintTop_toBottomOf="@+id/Title"></EditText>
 
         <EditText
             android:id="@+id/Location"
-            app:layout_constraintLeft_toRightOf="@+id/Prise"
-            app:layout_constraintRight_toRightOf="@+id/Title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
             android:layout_marginLeft="10dp"
+            android:layout_marginTop="25dp"
             android:hint="Location"
-
-
-
+            app:layout_constraintLeft_toRightOf="@+id/Prise"
+            app:layout_constraintRight_toRightOf="@+id/Title"
             app:layout_constraintTop_toBottomOf="@+id/Title"></EditText>
 
         <EditText
             android:id="@+id/Description"
-            app:layout_constraintTop_toBottomOf="@+id/Prise"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:layout_marginTop="25dp"
-            android:hint="Description">
-        </EditText>
+            android:hint="Description"
+            app:layout_constraintTop_toBottomOf="@+id/Prise"></EditText>
 
         <EditText
             android:id="@+id/Inventory"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/Description"
             android:layout_marginTop="25dp"
-            android:hint="Inventory">
+            android:hint="Inventory"
+            app:layout_constraintTop_toBottomOf="@+id/Description"></EditText>
 
-        </EditText>
         <EditText
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/Description"
-            app:layout_constraintRight_toRightOf="@+id/Description"
             android:layout_marginTop="25dp"
-            android:hint="Weight">
-
-        </EditText>
+            android:hint="Weight"
+            app:layout_constraintRight_toRightOf="@+id/Description"
+            app:layout_constraintTop_toBottomOf="@+id/Description"></EditText>
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

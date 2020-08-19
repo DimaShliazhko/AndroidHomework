@@ -5,8 +5,7 @@
     android:orientation="vertical"
     android:padding="35dp">
 
-
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.45"
@@ -18,20 +17,15 @@
             android:layout_weight="0.4"
             android:text="@string/sign_in"
             android:textSize="25sp"
-            android:textStyle="bold"
-
-            ></TextView>
+            android:textStyle="bold"></TextView>
 
         <EditText
-
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="0.3"
             android:background="@drawable/share_edit"
             android:hint="@string/mail"
-            android:padding="10dp">
-
-        </EditText>
+            android:padding="10dp"></EditText>
 
         <EditText
             android:layout_width="match_parent"
@@ -43,7 +37,7 @@
             android:padding="10dp"></EditText>
     </LinearLayout>
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.1"
@@ -52,10 +46,7 @@
         <CheckBox
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.1"
-
-
-            ></CheckBox>
+            android:layout_weight="0.1"></CheckBox>
 
         <TextView
             android:layout_width="0dp"
@@ -72,7 +63,7 @@
 
     </LinearLayout>
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.35"
@@ -93,11 +84,7 @@
             android:layout_height="0dp"
             android:layout_gravity="center_horizontal|bottom"
             android:layout_weight="0.4"
-            android:text="@string/just_sign"
-
-            ></TextView>
+            android:text="@string/just_sign"></TextView>
 
     </LinearLayout>
-
-
 </LinearLayout>

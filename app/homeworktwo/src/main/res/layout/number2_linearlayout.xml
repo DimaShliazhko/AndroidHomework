@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -24,53 +23,38 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_gravity="bottom|center_horizontal|right"
-            android:src="@drawable/ic_baseline_photo_camera_24">
-
-        </ImageView>
+            android:src="@drawable/ic_baseline_photo_camera_24"></ImageView>
     </FrameLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.65"
-
-
-
         android:orientation="vertical">
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-
-            android:hint="Title">
-
-        </EditText>
+            android:hint="Title"></EditText>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-
             android:orientation="horizontal">
 
             <EditText
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.3"
-
-                android:hint="Prise">
-
-            </EditText>
+                android:hint="Prise"></EditText>
 
             <EditText
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.7"
-                android:hint="Location"
-
-
-                >
+                android:hint="Location">
                 <!--     <ImageView
                          android:src="@mipmap/ic_baseline_location_on_24"
                          android:layout_width="wrap_content"
@@ -84,9 +68,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:hint="Description">
-
-        </EditText>
+            android:hint="Description"></EditText>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -98,28 +80,19 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.33"
-                android:hint="Inventory">
-
-            </EditText>
+                android:hint="Inventory"></EditText>
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.33"
-                >
-
-            </TextView>
+                android:layout_weight="0.33"></TextView>
 
             <EditText
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.33"
-                android:hint="Weight">
-
-            </EditText>
+                android:hint="Weight"></EditText>
 
         </LinearLayout>
     </LinearLayout>
-
-
 </LinearLayout>

@@ -4,7 +4,6 @@
     android:layout_height="match_parent"
     android:padding="40dp">
 
-
     <TextView
         android:id="@+id/sign_in"
         android:layout_width="wrap_content"
@@ -12,21 +11,17 @@
         android:layout_alignParentTop="true"
         android:text="@string/sign_in"
         android:textSize="25sp"
-        android:textStyle="bold"
-
-        ></TextView>
+        android:textStyle="bold"></TextView>
 
     <EditText
         android:id="@+id/mail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/sign_in"
+        android:layout_marginTop="20dp"
         android:background="@drawable/share_edit"
         android:hint="@string/mail"
-        android:layout_marginTop="20dp"
-        android:padding="10dp">
-
-    </EditText>
+        android:padding="10dp"></EditText>
 
     <EditText
         android:id="@+id/password"
@@ -38,23 +33,17 @@
         android:hint="@string/password"
         android:padding="10dp"></EditText>
 
-
     <CheckBox
         android:id="@+id/checkbox1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/password"
-
-
-        ></CheckBox>
+        android:layout_below="@id/password"></CheckBox>
 
     <TextView
-
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@id/checkbox1"
         android:layout_toRightOf="@id/checkbox1"
-
         android:text="@string/remember"></TextView>
 
     <TextView
@@ -62,16 +51,13 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@id/checkbox1"
         android:layout_alignParentRight="true"
-
         android:text="@string/forgot"></TextView>
-
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="30dp"
-
         android:layout_above="@+id/just_sign"
+        android:layout_marginHorizontal="30dp"
         android:layout_marginBottom="100dp"
         android:background="@drawable/share_box"
         android:text="@string/sign_in"
@@ -84,8 +70,5 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:text="@string/just_sign"
-
-        ></TextView>
-
+        android:text="@string/just_sign"></TextView>
 </RelativeLayout>

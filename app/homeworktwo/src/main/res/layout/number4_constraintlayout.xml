@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     android:layout_margin="20dp">
 
-
     <TextView
         android:id="@+id/android"
         android:layout_width="wrap_content"
@@ -15,7 +14,6 @@
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent"></TextView>
-
 
     <ImageView
         android:id="@+id/mainview"
@@ -41,9 +39,7 @@
         android:text="@string/posts"
         app:layout_constraintLeft_toRightOf="@+id/mainview"
         app:layout_constraintRight_toLeftOf="@+id/number_followers"
-
         app:layout_constraintTop_toBottomOf="@+id/number_posts"></TextView>
-
 
     <TextView
         android:id="@+id/number_followers"
@@ -61,7 +57,6 @@
         app:layout_constraintLeft_toRightOf="@+id/number_posts"
         app:layout_constraintRight_toLeftOf="@id/number_following"
         app:layout_constraintTop_toBottomOf="@+id/number_followers"></TextView>
-
 
     <TextView
         android:id="@+id/number_following"
@@ -81,13 +76,11 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/number_following"></TextView>
 
-
     <TextView
         android:id="@+id/username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginVertical="10dp"
-
         android:text="@string/username"
         android:textSize="18dp"
         android:textStyle="bold"
@@ -109,7 +102,6 @@
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@+id/address"></TextView>
 
-
     <ImageView
         android:id="@+id/image1.1"
         android:layout_width="50dp"
@@ -119,7 +111,6 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/description"></ImageView>
 
-
     <ImageView
         android:id="@+id/image1.2"
         android:layout_width="50dp"
@@ -127,9 +118,7 @@
         android:src="@drawable/ic_baseline_directions_bike_24"
         app:layout_constraintLeft_toRightOf="@+id/image1.1"
         app:layout_constraintRight_toLeftOf="@+id/image1.3"
-        app:layout_constraintTop_toBottomOf="@+id/description">
-
-    </ImageView>
+        app:layout_constraintTop_toBottomOf="@+id/description"></ImageView>
 
     <ImageView
         android:id="@+id/image1.3"
@@ -138,9 +127,7 @@
         android:src="@drawable/ic_baseline_directions_bike_24"
         app:layout_constraintLeft_toRightOf="@+id/image1.2"
         app:layout_constraintRight_toLeftOf="@+id/image1.4"
-        app:layout_constraintTop_toBottomOf="@+id/description">
-
-    </ImageView>
+        app:layout_constraintTop_toBottomOf="@+id/description"></ImageView>
 
     <ImageView
         android:id="@+id/image1.4"
@@ -149,9 +136,7 @@
         android:src="@drawable/ic_baseline_directions_bike_24"
         app:layout_constraintLeft_toRightOf="@+id/image1.3"
         app:layout_constraintRight_toLeftOf="@+id/image1.5"
-        app:layout_constraintTop_toBottomOf="@+id/description">
-
-    </ImageView>
+        app:layout_constraintTop_toBottomOf="@+id/description"></ImageView>
 
     <ImageView
         android:id="@+id/image1.5"
@@ -160,9 +145,7 @@
         android:src="@drawable/ic_baseline_directions_bike_24"
         app:layout_constraintLeft_toRightOf="@+id/image1.4"
         app:layout_constraintRight_toLeftOf="@+id/image1.6"
-        app:layout_constraintTop_toBottomOf="@+id/description">
-
-    </ImageView>
+        app:layout_constraintTop_toBottomOf="@+id/description"></ImageView>
 
     <ImageView
         android:id="@+id/image1.6"
@@ -171,13 +154,9 @@
         android:src="@drawable/ic_baseline_directions_bike_24"
         app:layout_constraintLeft_toRightOf="@+id/image1.5"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/description">
-
-    </ImageView>
-
+        app:layout_constraintTop_toBottomOf="@+id/description"></ImageView>
 
     <ImageView
-
         android:id="@+id/image3.1"
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -192,9 +171,7 @@
         android:layout_height="wrap_content"
         android:text="@string/description"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image3.1">
-
-    </TextView>
+        app:layout_constraintTop_toBottomOf="@+id/image3.1"></TextView>
 
 
     <ImageView
@@ -211,14 +188,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/call"
-        app:layout_constraintTop_toBottomOf="@+id/image3.2"
         app:layout_constraintLeft_toRightOf="@+id/image3.1"
         app:layout_constraintRight_toLeftOf="@id/image3.3"
-        ></TextView>
-
+        app:layout_constraintTop_toBottomOf="@+id/image3.2"></TextView>
 
     <ImageView
-
         android:id="@+id/image3.3"
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -232,12 +206,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/save"
-        app:layout_constraintTop_toBottomOf="@+id/image3.3"
         app:layout_constraintLeft_toRightOf="@+id/image3.2"
-        app:layout_constraintRight_toLeftOf="@id/image3.4"></TextView>
+        app:layout_constraintRight_toLeftOf="@id/image3.4"
+        app:layout_constraintTop_toBottomOf="@+id/image3.3"></TextView>
 
     <ImageView
-
         android:id="@id/image3.4"
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -252,10 +225,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/website"
-        app:layout_constraintTop_toBottomOf="@id/image3.4"
         app:layout_constraintLeft_toRightOf="@+id/image3.3"
-        app:layout_constraintRight_toRightOf="parent"></TextView>
-
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image3.4"></TextView>
 
     <ImageView
         android:id="@+id/image1"
@@ -263,8 +235,7 @@
         android:layout_height="100dp"
         android:src="@drawable/ic_baseline_directions_bike_24"
         app:layout_constraintBottom_toBottomOf="parent"
-       app:layout_constraintLeft_toLeftOf="parent"
-
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image3.1"></ImageView>
 
     <ImageView
@@ -285,6 +256,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image3.1"></ImageView>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
