@@ -30,6 +30,8 @@ public class CustomView extends View {
     private Paint paintnew;
     private Canvas canvas;
 
+    private int getX ;
+    private int getY ;
     public void setPaintSector1(Paint paintSector1) {
         this.paintSector1 = paintSector1;
     }
@@ -82,8 +84,8 @@ public class CustomView extends View {
     protected void onDraw(Canvas canvas) {
         side = radius * 3;
         super.onDraw(canvas);
-        Paint paintCentrCircle = new Paint();
 
+        Paint paintCentrCircle = new Paint();
         paintSector1 = new Paint();
         Paint paintSector2 = new Paint();
         Paint paintSector3 = new Paint();
@@ -109,13 +111,16 @@ public class CustomView extends View {
         canvas.drawArc(rect, 270, 90, true, paintSector4);
         canvas.drawCircle(width / 2, height / 2, radius, paintCentrCircle);
 
-
+    if (getX > 500){
+        paintSector1.setColor(ContextCompat.getColor(getContext(), R.color.colorDefolt));
+        invalidate();
+    }
         //  change(canvas);
 
 
     }
-
-    public void change(Canvas canvas) {
+/*
+    public void change(int x, int y) {
         Log.d("Dima", "создание нового элемента" + canvas);
         paintnew = new Paint();
         paintnew.setColor(ContextCompat.getColor(getContext(), R.color.colorDefolt));
@@ -125,13 +130,13 @@ public class CustomView extends View {
 
         invalidate();
     }
-
+*/
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
 
-        event.getX();
-        event.getY();
+       getX = (int) event.getX();
+       getY = (int) event.getY();
         if (event.getAction() == MotionEvent.ACTION_DOWN) {
             if (touchAction != null) {
                 touchAction.onTouchDown((int) event.getX(), (int) event.getY());
