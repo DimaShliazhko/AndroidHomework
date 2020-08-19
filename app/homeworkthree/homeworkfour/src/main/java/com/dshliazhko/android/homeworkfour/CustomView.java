@@ -26,15 +26,23 @@ public class CustomView extends View {
     private int radius = getContext().getResources().getDimensionPixelSize(R.dimen.radius);
     private TouchAction touchAction;
     private int side;
-    private Paint paintSector1;
     private Paint paintnew;
     private Canvas canvas;
 
-    private int getX ;
-    private int getY ;
+    private int getX;
+    private int getY;
+
+    Paint paintCentrCircle = new Paint();
+    Paint paintSector1 = new Paint();
+    Paint paintSector2 = new Paint();
+    Paint paintSector3 = new Paint();
+    Paint paintSector4 = new Paint();
+    RectF rect = new RectF();
+
     public void setPaintSector1(Paint paintSector1) {
         this.paintSector1 = paintSector1;
     }
+
 
     public Paint getPaintSector1() {
         return paintSector1;
@@ -85,11 +93,7 @@ public class CustomView extends View {
         side = radius * 3;
         super.onDraw(canvas);
 
-        Paint paintCentrCircle = new Paint();
-        paintSector1 = new Paint();
-        Paint paintSector2 = new Paint();
-        Paint paintSector3 = new Paint();
-        Paint paintSector4 = new Paint();
+
         paintCentrCircle.setColor(ContextCompat.getColor(getContext(), R.color.colorblack));
 
         paintSector1.setColor(ContextCompat.getColor(getContext(), R.color.colorred));
@@ -102,7 +106,6 @@ public class CustomView extends View {
         paintSector4.setStyle(Paint.Style.FILL);
 
 
-        RectF rect = new RectF();
         rect.set((width / 2) - side, (height / 2) - side, (width / 2) + side, (height / 2) + side);
 
         canvas.drawArc(rect, 0, 90, true, paintSector1);
@@ -111,32 +114,65 @@ public class CustomView extends View {
         canvas.drawArc(rect, 270, 90, true, paintSector4);
         canvas.drawCircle(width / 2, height / 2, radius, paintCentrCircle);
 
-    if (getX > 500){
-        paintSector1.setColor(ContextCompat.getColor(getContext(), R.color.colorDefolt));
-        invalidate();
-    }
-        //  change(canvas);
+        if ((getX >= (width / 2) + radius && getX <= width / 2 + side) && (getY >= (height / 2) + radius && getY <= height / 2 + side)) {
+            paintSector1.setColor(ContextCompat.getColor(getContext(), R.color.colorDefolt));
+            paintSector1.setStyle(Paint.Style.FILL);
+            canvas.drawArc(rect, 0, 90, true, paintSector1);
+            paintCentrCircle.setColor(ContextCompat.getColor(getContext(), R.color.colorblack));
+            canvas.drawCircle(width / 2, height / 2, radius, paintCentrCircle);
+            invalidate();
+        } else if ((getX >= (width / 2) + radius && getX <= width / 2 + side) && (getY <= (height / 2) - radius && getY >= height / 2 - side)) {
+            paintSector4.setColor(ContextCompat.getColor(getContext(), R.color.colorDefolt));
+            paintSector4.setStyle(Paint.Style.FILL);
+            canvas.drawArc(rect, 270, 90, true, paintSector4);
+            paintCentrCircle.setColor(ContextCompat.getColor(getContext(), R.color.colorblack));
+            canvas.drawCircle(width / 2, height / 2, radius, paintCentrCircle);
+            invalidate();
+        } else if ((getX <= (width / 2) - radius && getX >= width / 2 - side) && (getY >= (height / 2) + radius && getY <= height / 2 + side)) {
+            paintSector2.setColor(ContextCompat.getColor(getContext(), R.color.colorDefolt));
+            paintSector2.setStyle(Paint.Style.FILL);
+            canvas.drawArc(rect, 90, 90, true, paintSector2);
+            paintCentrCircle.setColor(ContextCompat.getColor(getContext(), R.color.colorblack));
+            canvas.drawCircle(width / 2, height / 2, radius, paintCentrCircle);
+            invalidate();
+        } else if ((getX <= (width / 2) - radius && getX >= width / 2 - side) && (getY <= (height / 2) - radius && getY >= height / 2 - side)) {
+            paintSector3.setColor(ContextCompat.getColor(getContext(), R.color.colorDefolt));
+            paintSector3.setStyle(Paint.Style.FILL);
+            canvas.drawArc(rect, 180, 90, true, paintSector3);
+            paintCentrCircle.setColor(ContextCompat.getColor(getContext(), R.color.colorblack));
+            canvas.drawCircle(width / 2, height / 2, radius, paintCentrCircle);
+            invalidate();
+        } else if ((getX <= (width / 2) + radius && getX >= width / 2 - radius) && (getY >= (height / 2) - radius && getY <= height / 2 + radius)) {
+            paintSector1.setColor(ContextCompat.getColor(getContext(), R.color.colorDefolt));
+            paintSector1.setStyle(Paint.Style.FILL);
+            // paintSector2 = paintSector3 = paintSector4 = paintSector1;
+            // paintSector2 = paintSector1;
+            // paintSector3 = paintSector1;
+            //paintSector4 = paintSector1;
+            paintSector2.setColor(ContextCompat.getColor(getContext(), R.color.colorDefolt));
+            paintSector2.setStyle(Paint.Style.FILL);
+            paintSector3.setColor(ContextCompat.getColor(getContext(), R.color.colorDefolt));
+            paintSector3.setStyle(Paint.Style.FILL);
+            paintSector4.setColor(ContextCompat.getColor(getContext(), R.color.colorDefolt));
+            paintSector4.setStyle(Paint.Style.FILL);
+            canvas.drawArc(rect, 0, 90, true, paintSector1);
+            canvas.drawArc(rect, 90, 90, true, paintSector2);
+            canvas.drawArc(rect, 180, 90, true, paintSector3);
+            canvas.drawArc(rect, 270, 90, true, paintSector4);
+            paintCentrCircle.setColor(ContextCompat.getColor(getContext(), R.color.colorblack));
+            canvas.drawCircle(width / 2, height / 2, radius, paintCentrCircle);
+            invalidate();
+        }
 
 
     }
-/*
-    public void change(int x, int y) {
-        Log.d("Dima", "создание нового элемента" + canvas);
-        paintnew = new Paint();
-        paintnew.setColor(ContextCompat.getColor(getContext(), R.color.colorDefolt));
-        paintnew.setStyle(Paint.Style.FILL);
-        paintSector1.setColor(ContextCompat.getColor(getContext(), R.color.colorDefolt));
-        canvas.drawCircle(300, 300, 50, paintnew);
 
-        invalidate();
-    }
-*/
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
 
-       getX = (int) event.getX();
-       getY = (int) event.getY();
+        getX = (int) event.getX();
+        getY = (int) event.getY();
         if (event.getAction() == MotionEvent.ACTION_DOWN) {
             if (touchAction != null) {
                 touchAction.onTouchDown((int) event.getX(), (int) event.getY());
