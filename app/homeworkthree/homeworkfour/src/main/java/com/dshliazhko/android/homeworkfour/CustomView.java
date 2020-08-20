@@ -176,8 +176,6 @@ public class CustomView extends View {
         if (event.getAction() == MotionEvent.ACTION_DOWN) {
             if (touchAction != null) {
                 touchAction.onTouchDown((int) event.getX(), (int) event.getY());
-
-
             }
         }
 

@@ -25,8 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private Boolean switchState;
     private Switch aSwitch;
     private Toolbar toolbar;
-
-    SharedPreferences.Editor editor;
+    private SharedPreferences.Editor editor;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,34 +62,23 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 editor.putBoolean("seting", b);
-                //  editor.putBoolean("switchState", aSwitch.isChecked());
+                editor.putBoolean("switchState", aSwitch.isChecked());
                 editor.apply();
-                //   Toast.makeText(MainActivity.this, "Отслеживание переключения: " + (b ? "on" : "off"), Toast.LENGTH_SHORT).show();
-              /*  if (b == true) {
-
-                    Toast.makeText(MainActivity.this, "Tost", Toast.LENGTH_SHORT).show();
-                } else {
-
-                    Snackbar.make(compoundButton, "Snackbar", Snackbar.LENGTH_LONG).show();
-                }
-
-*/
             }
         });
 
 
     }
-
+/*
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.d("Dima", "Destroi" + aSwitch.isChecked());
+        Log.d("Dima","Destroi"+aSwitch.isChecked());
         editor.putBoolean("switchState", aSwitch.isChecked());
         editor.apply();
 
-
     }
-
+*/
 
 }
 
