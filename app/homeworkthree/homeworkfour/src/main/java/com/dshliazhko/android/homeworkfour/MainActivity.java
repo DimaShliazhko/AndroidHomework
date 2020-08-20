@@ -86,7 +86,8 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
         Log.d("Dima", "Destroi" + aSwitch.isChecked());
         editor.putBoolean("switchState", aSwitch.isChecked());
-        editor = sPref.edit();
+        editor.apply();
+
 
     }
 
