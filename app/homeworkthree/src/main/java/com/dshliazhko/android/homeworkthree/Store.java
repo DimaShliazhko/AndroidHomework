@@ -23,6 +23,9 @@ public class Store {
     public void delete(int index) {
         this.items.remove(index);
     }
+    public void delete(Contact contact) {
+        this.items.remove(contact);
+    }
 
     public List<Contact> getAll() {
         return this.items;

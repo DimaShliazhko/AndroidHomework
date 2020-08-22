@@ -8,17 +8,17 @@ import java.util.Objects;
 import java.util.UUID;
 
 public class Contact implements Serializable {
-    private String id ;
+    private int id;
     private String edit_name;
     private String edit_contact;
 
     public Contact(String edit_name, String edit_contact) {
         this.edit_name = edit_name;
         this.edit_contact = edit_contact;
-    //    this.id = UUID.randomUUID().toString();
+        //    this.id = UUID.randomUUID().toString();
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
@@ -45,5 +45,10 @@ public class Contact implements Serializable {
             return Objects.equals(edit_name, contact.edit_name) && Objects.equals(edit_contact, contact.edit_contact);
         }
         return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
     }
 }

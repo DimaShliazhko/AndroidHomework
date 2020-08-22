@@ -1,16 +1,11 @@
 package com.dshliazhko.android.homeworkthree;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class Edit_or_delete_activity extends AppCompatActivity {
@@ -20,8 +15,12 @@ public class Edit_or_delete_activity extends AppCompatActivity {
     private EditText contact_edit;
     private Button delete;
     private Button edit;
-    private RecyclerView.Adapter adapter;
+    private RecyclerView recyclerView;
     // public static final String Contact_ID = "contactId";
+
+    public Button getDelete() {
+        return delete;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +52,9 @@ public class Edit_or_delete_activity extends AppCompatActivity {
             public void onClick(View view) {
 
                 Store.getStore().delete(0);
-                adapter.notifyDataSetChanged();
+                //     recyclerView.getAdapter().notifyItemRemoved(0);
+                //   recyclerView.getAdapter().notifyItemRangeChanged(0, Store.getStore().size());
+
                 finish();
 
             }

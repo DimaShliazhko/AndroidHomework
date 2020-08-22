@@ -1,19 +1,14 @@
 package com.dshliazhko.android.homeworkthree;
 
 import android.content.Context;
-import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -21,22 +16,19 @@ class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder> {
 
     private Context context;
     private OnContactClickListener onContactClickListener;
-    private List<Contact> item = Store.getStore().getAll() ;
+    private List<Contact> item = Store.getStore().getAll();
+    private List<Contact> store;
+    private Contact contact;
 
-    public List<Contact> getItem() {
-        return item;
-    }
 
     public ListAdapter(Context context, OnContactClickListener onContactClickListener) {
         this.context = context;
         this.onContactClickListener = onContactClickListener;
     }
 
-
-    public interface OnContactClickListener {
-        void onContactClick(Contact contact);
+    public List<Contact> getItem() {
+        return item;
     }
-
 
     @NonNull
     @Override
@@ -47,15 +39,18 @@ class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull final ListViewHolder holder, int position) {
-        //  Contact contact = Store.getStore().get(position);
+        Contact contact = Store.getStore().get(position);
 
         holder.bind(item.get(position), onContactClickListener);
 
 
-     /*
+
+
+/*
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 int newPosition = holder.getAdapterPosition();
 
                 item.remove(newPosition);
@@ -65,20 +60,29 @@ class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder> {
 
             }
         });
+*/
 
-   */
 
     }
 
+    private void removeItem(int position) {
+        // int newPosition = holder.getAdapterPosition();
+        int newPosition = position;
+        item.remove(newPosition);
+        notifyItemRemoved(newPosition);
+        notifyItemRangeChanged(newPosition, item.size());
 
-
-
+    }
 
     @Override
     public int getItemCount() {
         return item.size();
     }
 
+
+    public interface OnContactClickListener {
+        void onContactClick(Contact contact);
+    }
 
     class ListViewHolder extends RecyclerView.ViewHolder {
         private TextView name_contact;
@@ -92,11 +96,7 @@ class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder> {
 
 
         }
-        private void removeItem(int position) {
-            item.remove(position);
-            notifyItemRemoved(position);
-            notifyItemRangeChanged(position, item.size());
-        }
+
 
         public void bind(final Contact contact, final OnContactClickListener onContactClickListener) {
             String name_contact_ = contact.getEdit_name();
@@ -108,7 +108,7 @@ class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder> {
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    // Contact contact = item.get(getLayoutPosition());
+
                     onContactClickListener.onContactClick(contact);
 
                 }
