@@ -1,6 +1,7 @@
 package com.dshliazhko.android.homeworkthree;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,6 +18,7 @@ public class Edit_or_delete_activity extends AppCompatActivity {
     private Button edit;
     private RecyclerView recyclerView;
     // public static final String Contact_ID = "contactId";
+    private  int id;
 
     public Button getDelete() {
         return delete;
@@ -37,6 +39,8 @@ public class Edit_or_delete_activity extends AppCompatActivity {
             contact = (Contact) arguments.getSerializable("contact");
             name_edit.setText(contact.getEdit_name());
             contact_edit.setText(contact.getEdit_contact());
+            id = contact.getId();
+            Log.d("Dima","id"+id);
         }
 
         edit.setOnClickListener(new View.OnClickListener() {
@@ -51,7 +55,7 @@ public class Edit_or_delete_activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Store.getStore().delete(0);
+             //   Store.getStore().delete(contact);
                 //     recyclerView.getAdapter().notifyItemRemoved(0);
                 //   recyclerView.getAdapter().notifyItemRangeChanged(0, Store.getStore().size());
 

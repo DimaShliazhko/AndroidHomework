@@ -4,18 +4,41 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/edit_name"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/radioButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Contact"></RadioButton>
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="e-mail"></RadioButton>
+
+    </RadioGroup>
+
     <EditText
         android:id="@+id/edit_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Name"
-        app:layout_constraintTop_toTopOf="parent"></EditText>
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup"></EditText>
 
     <EditText
         android:id="@+id/edit_contact"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="contact"
+        android:hint="Contact"
         app:layout_constraintTop_toBottomOf="@id/edit_name"></EditText>
 
     <ImageButton
@@ -30,12 +53,4 @@
     </ImageButton>
 
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycleView2"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/save"
-        app:layout_constraintTop_toBottomOf="@id/edit_contact">
-
-    </androidx.recyclerview.widget.RecyclerView>
 </androidx.constraintlayout.widget.ConstraintLayout>

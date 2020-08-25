@@ -5,17 +5,21 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.SearchView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     public static final String ContactID = "ContactID";
     private Button buttonAddContact;
-    private TextView searchText;
+    private SearchView searchText;
     private RecyclerView recyclerView;
     //  private ListAdapter adapter;
     private EditText editNameContact;
@@ -25,6 +29,10 @@ public class MainActivity extends AppCompatActivity {
     private ListAdapter.OnContactClickListener onContactClickListener;
     private RecyclerView.Adapter adapter;
     private Button delete;
+    private RadioGroup radioGroup;
+    private RadioButton radioButton1;
+    private RadioButton radioButton2;
+    private ArrayList<Contact> item = (ArrayList<Contact>) Store.getStore().getAll();
 
     public RecyclerView.Adapter getAdapter() {
         return adapter;
@@ -40,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
 
-        recyclerView.setAdapter(new ListAdapter(this, new ListAdapter.OnContactClickListener() {
+        recyclerView.setAdapter(new ListAdapter(this, item, new ListAdapter.OnContactClickListener() {
             @Override
             public void onContactClick(Contact contact) {
                 //    Toast.makeText(MainActivity.this, "user " + contact.getEdit_name(), Toast.LENGTH_LONG).show();
@@ -51,22 +59,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         }));
-        /*
-
-        delete =     (Button) findViewById(R.id.delete);
-        delete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-
-                Store.getStore().delete(0);
-                recyclerView.getAdapter().notifyItemRemoved(0);
-                recyclerView.getAdapter().notifyItemRangeChanged(0, Store.getStore().size());
-            }
-        });
-
-*/
-
 
 
         findViewById(R.id.add_contact_button).setOnClickListener(new View.OnClickListener() {

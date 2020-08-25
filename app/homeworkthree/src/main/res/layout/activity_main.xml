@@ -6,15 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <EditText
+    <SearchView
         android:id="@+id/search_text"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
-        android:hint="@string/search_contact"
+
         app:layout_constraintTop_toTopOf="parent">
 
-    </EditText>
+    </SearchView>
 
 
     <ImageButton
@@ -39,15 +39,7 @@
 
     </androidx.recyclerview.widget.RecyclerView>
 
-    <Button
-        android:id="@+id/mainbutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
 
-        app:layout_constraintTop_toBottomOf="@id/recycleView"
-        app:layout_constraintBottom_toBottomOf="parent">
-
-    </Button>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

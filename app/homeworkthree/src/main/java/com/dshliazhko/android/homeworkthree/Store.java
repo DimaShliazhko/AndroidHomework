@@ -7,7 +7,7 @@ import java.util.List;
 public class Store {
     private static final Store INST = new Store();
 
-    private final ArrayList<Contact> items = new ArrayList<Contact>();
+    private final List<Contact> items = new ArrayList<Contact>();
 
     private Store() {
     }
@@ -16,7 +16,10 @@ public class Store {
         return INST;
     }
 
-    public void add(Contact contact) {
+    public void add(int i , Contact contact) {
+        this.items.add(i,contact);
+    }
+    public void add( Contact contact) {
         this.items.add(contact);
     }
 

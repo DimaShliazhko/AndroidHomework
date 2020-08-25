@@ -1,21 +1,44 @@
 package com.dshliazhko.android.homeworkthree;
 
+import android.widget.ImageView;
+
 import androidx.annotation.Nullable;
-import androidx.recyclerview.widget.RecyclerView;
 
 import java.io.Serializable;
 import java.util.Objects;
-import java.util.UUID;
 
 public class Contact implements Serializable {
     private int id;
     private String edit_name;
     private String edit_contact;
+    private int image_View;
+
+    public Contact(String edit_name, String edit_contact, int image_View) {
+        this.edit_name = edit_name;
+        this.edit_contact = edit_contact;
+        this.image_View = image_View;
+
+        //    this.id = UUID.randomUUID().toString();
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Contact() {
+    }
 
     public Contact(String edit_name, String edit_contact) {
         this.edit_name = edit_name;
         this.edit_contact = edit_contact;
-        //    this.id = UUID.randomUUID().toString();
+    }
+
+    public int getImage_View() {
+        return image_View;
+    }
+
+    public void setImage_View(int image_View) {
+        this.image_View = image_View;
     }
 
     public int getId() {
@@ -26,12 +49,12 @@ public class Contact implements Serializable {
         return edit_name;
     }
 
-    public String getEdit_contact() {
-        return edit_contact;
-    }
-
     public void setEdit_name(String edit_name) {
         this.edit_name = edit_name;
+    }
+
+    public String getEdit_contact() {
+        return edit_contact;
     }
 
     public void setEdit_contact(String edit_contact) {
