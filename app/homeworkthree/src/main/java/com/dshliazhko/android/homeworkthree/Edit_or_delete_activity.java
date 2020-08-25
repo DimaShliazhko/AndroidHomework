@@ -18,11 +18,12 @@ public class Edit_or_delete_activity extends AppCompatActivity {
     private Button edit;
     private RecyclerView recyclerView;
     // public static final String Contact_ID = "contactId";
-    private  int id;
+    private int id;
+    private OnContactChange onContactChange;
 
-    public Button getDelete() {
-        return delete;
-    }
+   Edit_or_delete_activity( OnContactChange onContactChange){
+       this.onContactChange = onContactChange;
+   }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,13 +41,14 @@ public class Edit_or_delete_activity extends AppCompatActivity {
             name_edit.setText(contact.getEdit_name());
             contact_edit.setText(contact.getEdit_contact());
             id = contact.getId();
-            Log.d("Dima","id"+id);
+            Log.d("Dima", "id" + id);
         }
 
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                onContactChange.onEditContact();
+                finish();
 
             }
         });
@@ -54,11 +56,7 @@ public class Edit_or_delete_activity extends AppCompatActivity {
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-             //   Store.getStore().delete(contact);
-                //     recyclerView.getAdapter().notifyItemRemoved(0);
-                //   recyclerView.getAdapter().notifyItemRangeChanged(0, Store.getStore().size());
-
+                onContactChange.onDeleteContact();
                 finish();
 
             }

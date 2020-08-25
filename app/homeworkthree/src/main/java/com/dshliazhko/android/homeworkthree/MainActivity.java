@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
     private Button buttonAddContact;
     private SearchView searchText;
     private RecyclerView recyclerView;
-    //  private ListAdapter adapter;
     private EditText editNameContact;
     private EditText editContact;
     private EditText editNameContact1;

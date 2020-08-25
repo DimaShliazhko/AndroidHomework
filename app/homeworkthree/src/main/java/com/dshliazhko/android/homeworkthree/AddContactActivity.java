@@ -44,12 +44,11 @@ public class AddContactActivity extends AppCompatActivity implements Serializabl
             public void onClick(View view) {
                 contact.setEdit_name(editNameContact.getText().toString());
                 contact.setEdit_contact(editContact.getText().toString());
-             //   contact.setId(id);
-               // Store.getStore().add(id,contact);
+
                 Store.getStore().add(contact);
-                Log.d("Dima","setID"+id);
-                id++;
-                Log.d("Dima","ID++"+id);
+
+
+
 
 
                 finish();
