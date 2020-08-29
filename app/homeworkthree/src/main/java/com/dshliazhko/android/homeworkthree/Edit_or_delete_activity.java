@@ -9,7 +9,7 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class Edit_or_delete_activity extends AppCompatActivity {
+public class Edit_or_delete_activity extends AppCompatActivity  {
 
     private Contact contact;
     private EditText name_edit;
@@ -20,11 +20,14 @@ public class Edit_or_delete_activity extends AppCompatActivity {
     // public static final String Contact_ID = "contactId";
     private int id;
     private OnContactChange onContactChange;
-
-   Edit_or_delete_activity( OnContactChange onContactChange){
+/*
+   Edit_or_delete_activity( OnContactChange onContactChange ){
        this.onContactChange = onContactChange;
    }
-
+*/
+    Edit_or_delete_activity(  ) {
+        this.onContactChange = onContactChange;
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,16 +50,19 @@ public class Edit_or_delete_activity extends AppCompatActivity {
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                onContactChange.onEditContact();
-                finish();
+          //      Log.d("Dima","клик едит");
+                // onContactChange.onEditContact();
+               finish();
 
             }
         });
 
+
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                onContactChange.onDeleteContact();
+             //   Log.d("Dima","клик делейт");
+               // onContactChange.onDeleteContact();
                 finish();
 
             }

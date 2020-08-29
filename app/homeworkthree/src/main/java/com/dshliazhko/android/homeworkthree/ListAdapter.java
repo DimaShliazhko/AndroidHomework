@@ -38,7 +38,7 @@ class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder> imple
     public ListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.contact, parent, false);
         //  View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.contact2, parent, false);
-        Edit_or_delete_activity edit_or_delete_activity = new Edit_or_delete_activity(this);
+        //     Edit_or_delete_activity edit_or_delete_activity = new Edit_or_delete_activity(this);
         return new ListViewHolder(view);
     }
 
@@ -46,7 +46,7 @@ class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder> imple
     public void onBindViewHolder(@NonNull final ListViewHolder holder, int position) {
         holder.bind(item.get(position), onContactClickListener);
         //Edit_or_delete_activity edit_or_delete_activity = new Edit_or_delete_activity(this);
-      //  Edit_or_delete_activity edit_or_delete_activity = new Edit_or_delete_activity(holder.getAdapterPosition());
+        //  Edit_or_delete_activity edit_or_delete_activity = new Edit_or_delete_activity(holder.getAdapterPosition());
 
 /*
         holder.itemView.setOnClickListener(new View.OnClickListener() {

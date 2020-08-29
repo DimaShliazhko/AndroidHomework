@@ -54,12 +54,8 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, Edit_or_delete_activity.class);
                 intent.putExtra("contact", contact);
                 startActivityForResult(intent, 1000);
-
-
             }
         }));
-
-
         findViewById(R.id.add_contact_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
