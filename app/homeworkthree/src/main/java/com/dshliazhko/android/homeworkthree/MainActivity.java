@@ -2,6 +2,7 @@ package com.dshliazhko.android.homeworkthree;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
     private RadioButton radioButton2;
     private ArrayList<Contact> item;
     private ListAdapter listAdapter;
+    private OnContactChange onContactChange;
 
 
     @Override
@@ -53,6 +55,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
             public void onContactClick(Contact contact) {
                 recyclerView.invalidate();
                 //    Toast.makeText(MainActivity.this, "user " + contact.getEdit_name(), Toast.LENGTH_LONG).show();
+
                 Intent intent = new Intent(MainActivity.this, Edit_or_delete_activity.class);
                 intent.putExtra("contact", contact);
                 startActivityForResult(intent, 1000);
@@ -66,7 +69,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
             }
         });
 
-        recyclerView.getAdapter().notifyDataSetChanged();
+       // recyclerView.getAdapter().notifyDataSetChanged();
 
     }
 
@@ -76,5 +79,6 @@ public class MainActivity extends AppCompatActivity implements Serializable {
 
         startActivity(intent);
     }
+
 }
 

@@ -33,6 +33,7 @@ public class Edit_or_delete_activity extends AppCompatActivity {
         edit = findViewById(R.id.edit);
         Bundle arguments = getIntent().getExtras();
 
+
         if (arguments != null) {
             contact = (Contact) arguments.getSerializable("contact");
             name_edit.setText(contact.getEdit_name());
@@ -45,7 +46,8 @@ public class Edit_or_delete_activity extends AppCompatActivity {
                 Store.getStore().delete(contact.getId());
                 contact.setEdit_name(name_edit.getText().toString());
                 contact.setEdit_contact(contact_edit.getText().toString());
-                Store.getStore().add(contact.getId(),contact);
+                Store.getStore().add(contact.getId(), contact);
+
 
                 finish();
             }

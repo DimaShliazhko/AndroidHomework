@@ -56,6 +56,7 @@ class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder> /*imp
                 notifyItemRemoved(newPosition);
                 notifyItemRangeChanged(newPosition, item.size());
 
+
             }
         });
 */
@@ -66,19 +67,6 @@ class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder> /*imp
     @Override
     public int getItemCount() {
         return item.size();
-    }
-
-    //   @Override
-    public void onDeleteContact() {
-        Log.d("Dima", "DELETE");
-        //  item.remove(position);
-        // notifyItemRemoved(position);
-        //notifyItemRangeChanged(position, item.size());
-    }
-
-    //  @Override
-    public void onEditContact() {
-        Log.d("Dima", "EDIT");
     }
 
 
