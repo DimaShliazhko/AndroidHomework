@@ -1,7 +1,6 @@
 package com.dshliazhko.android.homeworkthree;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -15,6 +14,7 @@ import java.io.Serializable;
 
 public class AddContactActivity extends AppCompatActivity implements Serializable {
 
+    private static int id = 0;
     private ImageButton save;
     private EditText editNameContact;
     private EditText editContact;
@@ -22,7 +22,6 @@ public class AddContactActivity extends AppCompatActivity implements Serializabl
     private String editContact_;
     private RadioGroup radioGroup;
     private ImageView imageView;
-    private static  int id = 0;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -46,11 +45,6 @@ public class AddContactActivity extends AppCompatActivity implements Serializabl
                 contact.setEdit_contact(editContact.getText().toString());
 
                 Store.getStore().add(contact);
-
-
-
-
-
                 finish();
 
 

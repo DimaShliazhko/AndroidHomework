@@ -16,20 +16,22 @@ public class Store {
         return INST;
     }
 
-    public void add(int i , Contact contact) {
-        this.items.add(i,contact);
+    public void add(int i, Contact contact) {
+        this.items.add(i, contact);
     }
-    public void add( Contact contact) {
+
+    public void add(Contact contact) {
         this.items.add(contact);
     }
 
     public void delete(int index) {
         this.items.remove(index);
     }
-    public void delete(Contact contact) {
+
+ /*   public void delete(Contact contact) {
         this.items.remove(contact);
     }
-
+*/
     public List<Contact> getAll() {
         return this.items;
     }

@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder> implements OnContactChange {
+class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder> /*implements OnContactChange */ {
 
     private Context context;
     private OnContactClickListener onContactClickListener;
@@ -37,18 +37,15 @@ class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder> imple
     @Override
     public ListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.contact, parent, false);
-        //  View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.contact2, parent, false);
-        //     Edit_or_delete_activity edit_or_delete_activity = new Edit_or_delete_activity(this);
         return new ListViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull final ListViewHolder holder, int position) {
-        holder.bind(item.get(position), onContactClickListener);
-        //Edit_or_delete_activity edit_or_delete_activity = new Edit_or_delete_activity(this);
-        //  Edit_or_delete_activity edit_or_delete_activity = new Edit_or_delete_activity(holder.getAdapterPosition());
-
-/*
+        item.get(position).setId(holder.getAdapterPosition());
+        Log.d("dima", "позиция" + holder.getAdapterPosition());
+        holder.bind(item.get(position), holder.getAdapterPosition(), onContactClickListener);
+        /*
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -58,7 +55,6 @@ class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder> imple
                 item.remove(newPosition);
                 notifyItemRemoved(newPosition);
                 notifyItemRangeChanged(newPosition, item.size());
-
 
             }
         });
@@ -72,7 +68,7 @@ class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder> imple
         return item.size();
     }
 
-    @Override
+    //   @Override
     public void onDeleteContact() {
         Log.d("Dima", "DELETE");
         //  item.remove(position);
@@ -80,7 +76,7 @@ class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder> imple
         //notifyItemRangeChanged(position, item.size());
     }
 
-    @Override
+    //  @Override
     public void onEditContact() {
         Log.d("Dima", "EDIT");
     }
@@ -108,7 +104,7 @@ class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder> imple
         }
 
 
-        public void bind(final Contact contact, final OnContactClickListener onContactClickListener) {
+        public void bind(final Contact contact, int adapterPosition, final OnContactClickListener onContactClickListener) {
             String name_contact_ = contact.getEdit_name();
             String number_contact_ = contact.getEdit_contact();
             int image_View_ = contact.getImage_View();

@@ -9,7 +9,7 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class Edit_or_delete_activity extends AppCompatActivity  {
+public class Edit_or_delete_activity extends AppCompatActivity {
 
     private Contact contact;
     private EditText name_edit;
@@ -20,14 +20,8 @@ public class Edit_or_delete_activity extends AppCompatActivity  {
     // public static final String Contact_ID = "contactId";
     private int id;
     private OnContactChange onContactChange;
-/*
-   Edit_or_delete_activity( OnContactChange onContactChange ){
-       this.onContactChange = onContactChange;
-   }
-*/
-    Edit_or_delete_activity(  ) {
-        this.onContactChange = onContactChange;
-    }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,17 +37,17 @@ public class Edit_or_delete_activity extends AppCompatActivity  {
             contact = (Contact) arguments.getSerializable("contact");
             name_edit.setText(contact.getEdit_name());
             contact_edit.setText(contact.getEdit_contact());
-            id = contact.getId();
-            Log.d("Dima", "id" + id);
         }
 
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-          //      Log.d("Dima","клик едит");
-                // onContactChange.onEditContact();
-               finish();
+                Store.getStore().delete(contact.getId());
+                contact.setEdit_name(name_edit.getText().toString());
+                contact.setEdit_contact(contact_edit.getText().toString());
+                Store.getStore().add(contact.getId(),contact);
 
+                finish();
             }
         });
 
@@ -61,8 +55,9 @@ public class Edit_or_delete_activity extends AppCompatActivity  {
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-             //   Log.d("Dima","клик делейт");
-               // onContactChange.onDeleteContact();
+                Log.d("Dima", "клик едит" + contact.getId());
+                Store.getStore().delete(contact.getId());
+
                 finish();
 
             }
