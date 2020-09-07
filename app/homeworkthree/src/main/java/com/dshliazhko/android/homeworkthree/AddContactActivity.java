@@ -45,6 +45,7 @@ public class AddContactActivity extends AppCompatActivity implements Serializabl
                 contact.setEdit_contact(editContact.getText().toString());
 
                 Store.getStore().add(contact);
+                setResult(RESULT_OK);
                 finish();
 
 

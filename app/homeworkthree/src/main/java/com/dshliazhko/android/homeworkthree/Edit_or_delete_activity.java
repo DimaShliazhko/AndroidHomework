@@ -17,6 +17,7 @@ public class Edit_or_delete_activity extends AppCompatActivity {
     private Button delete;
     private Button edit;
     private RecyclerView recyclerView;
+    private ListAdapter adapter;
     // public static final String Contact_ID = "contactId";
     private int id;
     private OnContactChange onContactChange;
@@ -47,8 +48,7 @@ public class Edit_or_delete_activity extends AppCompatActivity {
                 contact.setEdit_name(name_edit.getText().toString());
                 contact.setEdit_contact(contact_edit.getText().toString());
                 Store.getStore().add(contact.getId(), contact);
-
-
+                setResult(RESULT_OK);
                 finish();
             }
         });
@@ -59,7 +59,7 @@ public class Edit_or_delete_activity extends AppCompatActivity {
             public void onClick(View view) {
                 Log.d("Dima", "клик едит" + contact.getId());
                 Store.getStore().delete(contact.getId());
-
+                setResult(RESULT_OK);
                 finish();
 
             }

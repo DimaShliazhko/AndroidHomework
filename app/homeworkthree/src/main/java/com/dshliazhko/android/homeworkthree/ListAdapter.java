@@ -43,7 +43,7 @@ class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder> /*imp
     @Override
     public void onBindViewHolder(@NonNull final ListViewHolder holder, int position) {
         item.get(position).setId(holder.getAdapterPosition());
-        Log.d("dima", "позиция" + holder.getAdapterPosition());
+        //Log.d("dima", "позиция" + holder.getAdapterPosition());
         holder.bind(item.get(position), holder.getAdapterPosition(), onContactClickListener);
         /*
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -66,15 +66,16 @@ class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder> /*imp
 
     @Override
     public int getItemCount() {
-        return item.size();
+        return Store.getStore().size();
     }
 
+    public void filter() {
+    }
 
     public interface OnContactClickListener {
         void onContactClick(Contact contact);
 
     }
-
 
     class ListViewHolder extends RecyclerView.ViewHolder {
         private TextView name_contact;
@@ -108,6 +109,7 @@ class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListViewHolder> /*imp
 
                 }
             });
+
         }
 
     }

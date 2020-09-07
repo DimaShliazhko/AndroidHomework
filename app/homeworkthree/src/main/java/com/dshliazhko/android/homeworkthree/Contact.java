@@ -1,7 +1,5 @@
 package com.dshliazhko.android.homeworkthree;
 
-import android.widget.ImageView;
-
 import androidx.annotation.Nullable;
 
 import java.io.Serializable;
@@ -18,7 +16,6 @@ public class Contact implements Serializable {
         this.edit_contact = edit_contact;
         this.image_View = image_View;
 
-        //    this.id = UUID.randomUUID().toString();
     }
 
     public void setId(int id) {

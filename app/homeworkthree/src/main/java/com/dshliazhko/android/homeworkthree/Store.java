@@ -28,10 +28,10 @@ public class Store {
         this.items.remove(index);
     }
 
- /*   public void delete(Contact contact) {
+    public void delete(Contact contact) {
         this.items.remove(contact);
     }
-*/
+
     public List<Contact> getAll() {
         return this.items;
     }
