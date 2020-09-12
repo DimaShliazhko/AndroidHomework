@@ -2,6 +2,9 @@ package com.dshliazhko.android.homeworkfive;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,7 +19,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.dshliazhko.android.homeworkthree.R;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements Serializable {
@@ -38,19 +40,18 @@ public class MainActivity extends AppCompatActivity implements Serializable {
     private ListAdapter listAdapter;
 
     private EditText searchText;
+    private MyDAO myDAO;
 
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        initDB();
 
-        adapter.notifyDataSetChanged();
-
-      /*  if (resultCode == RESULT_OK && requestCode == 100){
-
-            adapter.notifyDataSetChanged();
-        }
-*/
+        // Log.d("Dima", "обновляем адаптер" + myDAO.getAll());
+        //adapter.notifyDataSetChanged();
+        adapter = new ListAdapter(this, (List<ContactTable>) item, onContactClickListener);
+        recyclerView.setAdapter(adapter);
     }
 
     @Override
@@ -59,12 +60,8 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         setContentView(R.layout.activity_main);
 
         searchText = findViewById(R.id.search_text);
-        Database db = App.getInstance().getDb();
-        final MyDAO myDAO = db.getMyDAO();
-        item = myDAO.getAll();
+        myDAO = initDB();
 
-
-        /*
         searchText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -75,29 +72,13 @@ public class MainActivity extends AppCompatActivity implements Serializable {
             public void onTextChanged(CharSequence s, int i, int i1, int i2) {
 
                 if (item != null) {
-                    int ii;
-                    for (ii = 0; ii < item.size(); ii++) {
-                        if (!item.get(ii).getEdit_name().contains(s)) {
+                    String s1 = searchText.getText().toString();
 
-                            item.remove(ii);
-                            Log.d("Dima", "Поиск " + Store.getStore().get(ii).getEdit_name());
-
-                        }
-
-                    }
-
-                    adapter.notifyDataSetChanged();
-                    if (searchText.getText().toString().length() == 0) {
-                        Log.d("Dima", "размер" + searchText.getText().toString().length());
-                        Log.d("Dima", "размер сторе" + Store.getStore().getAll());
-                        //item = (ArrayList<Contact>) Store.getStore().getAll();
-
-                        adapter.notifyDataSetChanged();
-
-                    }
-
+                    Log.d("Dima", "поиск " + s1);
+                    item = myDAO.search(s1);
+                    Log.d("Dima", "поиск " + myDAO.search(s1));
+                    setAdapter();
                 }
-
             }
 
             @Override
@@ -105,9 +86,6 @@ public class MainActivity extends AppCompatActivity implements Serializable {
 
             }
         });
-
-*/
-
 
         onContactClickListener = new ListAdapter.OnContactClickListener() {
             @Override
@@ -124,9 +102,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
 
         recyclerView = findViewById(R.id.recycleView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
-        adapter = new ListAdapter(this, (ArrayList<ContactTable>) item, onContactClickListener);
-        recyclerView.setAdapter(adapter);
-
+        setAdapter();
 
         findViewById(R.id.add_contact_button).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -145,6 +121,19 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         Intent intent = new Intent(this, AddContactActivity.class);
         startActivityForResult(intent, 100);
 
+    }
+
+    private void setAdapter() {
+        adapter = new ListAdapter(this, (List<ContactTable>) item, onContactClickListener);
+        recyclerView.setAdapter(adapter);
+
+    }
+
+    public MyDAO initDB() {
+        Database db = App.getInstance().getDb();
+        final MyDAO myDAO = db.getMyDAO();
+        item = myDAO.getAll();
+        return myDAO;
     }
 }
 

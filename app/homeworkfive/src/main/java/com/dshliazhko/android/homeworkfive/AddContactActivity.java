@@ -41,8 +41,6 @@ public class AddContactActivity extends AppCompatActivity implements Serializabl
         editContact = findViewById(R.id.edit_contact);
         contact.setImage_View(R.drawable.ic_baseline_contact_phone_24);
 
-        //Создаем данные для передачи:
-
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -51,6 +49,7 @@ public class AddContactActivity extends AppCompatActivity implements Serializabl
 
 
                 myDAO.insert(contact);
+
                 setResult(RESULT_OK);
                 finish();
 
