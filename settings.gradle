@@ -1,3 +1,4 @@
+include ':app:homework7'
 include ':app:homework6'
 include ':app:homeworkfive'
 include ':app:homeworkthree:homeworkfour'
